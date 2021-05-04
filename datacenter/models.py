@@ -3,6 +3,7 @@ from django.db import models
 
 class Schoolkid(models.Model):
     """Ученик."""
+    MultipleObjectsReturned = None
     full_name = models.CharField('ФИО', max_length=200)
     birthday = models.DateField('день рождения', null=True)
 
@@ -35,6 +36,7 @@ class Subject(models.Model):
 class Lesson(models.Model):
     """Один урок в расписании занятий."""
 
+    objects = None
     TIMESLOTS_SCHEDULE = [
         "8:00-8:40",
         "8:50-9:30",
